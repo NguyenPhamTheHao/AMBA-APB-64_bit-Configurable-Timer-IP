@@ -1,0 +1,7 @@
+Mon Feb 16 12:26:06 +07 2026
+Trace back: Cannot find netBundle /test_bench/dut/u_timer_register/dbgTemp8_TDR0_store_8
+    while executing
+"{namespace inscope ::vsimwidgets::Dataflow {.main_pane.schematic.interior.cs.body.pw.df.schem _mouse_motion}} .main_pane.schematic.interior.cs.body.pw..."
+    (command bound to event)
+  <2:/home/thaone/altera/25.1std/questa_fse/linux_x86_64/tk8.6/bgerror.tcl:106: ::tkerror {Cannot find netBundle /test_bench/dut/u_timer_register/dbgTemp8_TDR0_store_8}
+  <1:/mtitcl/vsim/commands.tx_:7436: ::tk::dialog::error::bgerror {Cannot find netBundle /test_bench/dut/u_timer_register/dbgTemp8_TDR0_store_8}

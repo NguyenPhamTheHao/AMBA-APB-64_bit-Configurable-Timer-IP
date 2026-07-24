@@ -1,0 +1,41 @@
+# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
+# vsim -debugDB -l reg_rw_chk.log -voptargs="+acc" -assertdebug -c test_bench -do "log -r /*; run -all; quit" -wlf vsim.wlf 
+# Start time: 17:13:52 on Jul 21,2026
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vsim-8611) Generating debug db.
+# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
+# ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# //  Questa Altera Starter FPGA Edition-64
+# //  Version 2025.2 linux_x86_64 May 31 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading work.test_bench(fast)
+# Loading work.timer_top(fast)
+# Loading work.APB_slave(fast)
+# Loading work.counter_control(fast)
+# Loading work.interrupt(fast)
+# Loading work.timer_register(fast)
+# ** Note: (vsim-8900) Creating design debug database vsim.dbg.
+# log -r /*
+#  run -all
+# =================================================
+# =====Pat name: 2. TCR RW Access check============
+# =================================================
+# ==================== PASSED =====================
+# =================================================
+# Test_result PASSED 
+# ** Note: $finish    : ../tb/test_bench.v(63)
+#    Time: 2951 ns  Iteration: 0  Instance: /test_bench
+# End time: 17:13:53 on Jul 21,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1

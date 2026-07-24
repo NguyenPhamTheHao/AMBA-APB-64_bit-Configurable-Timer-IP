@@ -1,0 +1,6 @@
+2 9 APB_slave 4 fast 45 /home/thaone/myDesign/64bits_TimerIP/sim/work 0 0 0 0 52 0
+2 15 counter_control 4 fast 45 /home/thaone/myDesign/64bits_TimerIP/sim/work 0 0 0 0 140 0
+2 9 interrupt 4 fast 45 /home/thaone/myDesign/64bits_TimerIP/sim/work 0 0 0 0 10 0
+2 14 timer_register 4 fast 45 /home/thaone/myDesign/64bits_TimerIP/sim/work 0 0 0 0 619 0
+2 9 timer_top 4 fast 45 /home/thaone/myDesign/64bits_TimerIP/sim/work 0 0 0 0 80 0
+1 10 test_bench 4 fast 45 /home/thaone/myDesign/64bits_TimerIP/sim/work 0 0 311296 0 1230 0

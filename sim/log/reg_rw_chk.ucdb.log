@@ -1,0 +1,37 @@
+# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
+# vsim -debugDB -l reg_rw_chk.ucdb.log -voptargs="+acc" -assertdebug -c test_bench -do "log -r /*; run -all; quit" -wlf vsim.wlf 
+# Start time: 13:22:20 on Mar 27,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# //  Questa Altera Starter FPGA Edition-64
+# //  Version 2025.2 linux_x86_64 May 31 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading work.test_bench(fast)
+# Loading work.timer_top(fast)
+# Loading work.APB_slave(fast)
+# Loading work.counter_control(fast)
+# Loading work.interrupt(fast)
+# Loading work.timer_register(fast)
+# ** Note: (vsim-8716) Reusing existing debug database vsim.dbg.
+# log -r /*
+#  run -all
+# ====================================================
+# =====Pat name: 3. Byte access===============
+# ====================================================
+# ===================== PASSED =======================
+# ====================================================
+# Test_result PASSED 
+# ** Note: $finish    : ../tb/test_bench.v(63)
+#    Time: 4431 ns  Iteration: 0  Instance: /test_bench
+# End time: 13:22:22 on Mar 27,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0

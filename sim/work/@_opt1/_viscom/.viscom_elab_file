@@ -1,0 +1,1 @@
+/home/thaone/altera/25.1std/questa_fse/linux_x86_64/VisualizerRls/bin/viscom -nolock -quiet -jmem_size 541104 work.test_bench -quiet -auto_acc_if_foreign -work work +cover=bcesft -allow_unnamed -o _opt1 -id 1-000c29b3bdf2-69a2d1c5-9a9c7-50d0 +__betafsm
