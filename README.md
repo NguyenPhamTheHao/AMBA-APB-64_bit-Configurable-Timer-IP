@@ -47,22 +47,39 @@ The customized timer module designed in this project supports the following feat
 #### Prohibit Logic
 ![Prohibited Logic](image/prohibited_logic.drawio.png)
 
-#### Register File
+#### APB Slave
 ![APB Slave Logic Diagram](image/apb_slave_logic_diagram.drawio.png)
+
+#### Register File
+* **Read Access Diagram:**
 
 ![Read Access Diagram](image/READ_ACCESS.drawio.png)
 
+* **TCMP01 Logic:**
+
 ![TCMP01 Logic](image/TCMP01Logic.drawio.png)
+
+* **TCR Logic:**
 
 ![TCR Logic](<image/TCR_logic.drawio (2).png>)
 
+* **TDR0 Logic:**
+
 ![TDR0 Logic](image/TDR0Logic.drawio.png)
+
+* **TDR1 Logic:**
 
 ![TDR1 Logic](image/TDR1Logic.drawio.png)
 
+* **THCSR Diagram:**
+
 ![THCSR Diagram](image/THCSR.drawio.png)
 
+* **TIER Diagram:**
+
 ![TIER Final Diagram](image/TIER_FINAL.drawio.png)
+
+* **TISR Diagram:**
 
 ![TISR Diagram](image/TISR.drawio.png)
 
@@ -93,5 +110,6 @@ The reference report showing expected behavior and timing:
 The RTL design simulation result matching the golden reference:
 
 ![Built Model Pass Testcase](image/pass_testcase_built.png)
+
 ### 3. Coverage Report
 ![CV](image/Coverage_Report.jpg)
