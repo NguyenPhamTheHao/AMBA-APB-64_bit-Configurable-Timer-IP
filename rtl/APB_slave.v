@@ -8,14 +8,10 @@ module APB_slave(
     output wire wr_en,
     output wire rd_en
     );
-//=============================================================
-//=====  INTERNAL SIGNALS DECLARATION ( INTERCONNECTION)  =====
-//=============================================================
+//INTERNAL SIGNALS DECLARATION 
 wire pready_pre;
 
-//=============================================================
-//====   LOGIC DESIGN =========================================
-//=============================================================
+//LOGIC DESIGN 
 
 //Logic of tim_pready after the setup phase
 assign pready_pre= (~tim_psel) | tim_penable;

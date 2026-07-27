@@ -18,7 +18,7 @@ module timer_register(
     output reg int_en,
     output reg int_st
     );
-//===  ADDRESS OF SYSTEM REGISTER=============
+//ADDRESS OF SYSTEM REGISTER
 parameter ADDR_TCR   = 12'h0;
 parameter ADDR_TDR0  = 12'h4;
 parameter ADDR_TDR1  = 12'h8;
@@ -28,9 +28,7 @@ parameter ADDR_TIER  = 12'h14;
 parameter ADDR_TISR  = 12'h18;
 parameter ADDR_THCSR = 12'h1C;
 
-//============================================
-//===== INTERNAL SIGNALS DECLARATION =========
-//============================================
+// INTERNAL SIGNALS DECLARATION
 
 // Signals for TCR Logic
 wire TCR_sel;
@@ -64,12 +62,9 @@ wire div_en_prohibited_change;
 wire div_val_prohibited_change;
 wire div_val_prohibited_val;
 
+//LOGIC DESIGN (WRITE TRANSFER)
 
-//=============================================
-//==== LOGIC DESIGN (WRITE TRANSFER) ==========
-//=============================================
-
-//=========== TCR Logic =======================
+// TCR Logic 
 assign TCR_sel= wr_en & (tim_paddr==ADDR_TCR);
 
 // timer_en Write Transfer
@@ -102,7 +97,7 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
     end
 end
 
-//===== TDR0/1 Logic =====================
+//TDR0/1 Logic
 //TDR2
 assign TDR0_sel= wr_en & (tim_paddr==ADDR_TDR0);
 always @(posedge sys_clk or negedge sys_rst_n) begin
@@ -145,7 +140,7 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
           end
 end
 
-//====== TCMP0/1 Logic ====================
+//TCMP0/1 Logic 
 //TCMP0
 assign TCMP0_sel=wr_en & (tim_paddr==ADDR_TCMP0);
 always @(posedge sys_clk or negedge sys_rst_n) begin
@@ -175,7 +170,7 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
           end
 end
 
-//===== TIER Logic ====================
+//TIER Logic
 assign TIER_sel=wr_en & (tim_paddr==ADDR_TIER) & tim_pstrobe[0];
 always @(posedge sys_clk or negedge sys_rst_n) begin
     if(!sys_rst_n) int_en<=1'b0;
@@ -185,7 +180,7 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
           end
 end
 
-//===== TISR Logic ====================
+//TISR Logic 
 assign TISR_sel=wr_en & (tim_paddr==ADDR_TISR);
 assign int_st_clr= TISR_sel & tim_pstrobe[0] & tim_pwdata[0]; //Logic for detection write 1 to clear int_st
 assign equal_condition= (TDR0_store==TCMP0_store) && (TDR1_store==TCMP1_store); // Trigger condition occurs
@@ -200,7 +195,7 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
           end
 end
 
-//===== THCSR Logic ====================
+//THCSR Logic 
 assign THCSR_sel= wr_en & (tim_paddr==ADDR_THCSR) & tim_pstrobe[0];
 always @(posedge sys_clk or negedge sys_rst_n) begin
     if(!sys_rst_n) halt_req<=1'b0;
@@ -210,18 +205,13 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
           end
 end
 
-//=========================================================================
-//==== LOGIC FOR PROHIBITED WRITE ACCESS & ERROR RESPONSE LOGIC  ==========
-//=========================================================================
+//LOGIC FOR PROHIBITED WRITE ACCESS & ERROR RESPONSE LOGIC 
 assign div_en_prohibited_change=timer_en & tim_pstrobe[0] & (tim_pwdata[0]!=div_en);
 assign div_val_prohibited_change=timer_en & tim_pstrobe[1] & (tim_pwdata[11:8]!=div_val);
 assign div_val_prohibited_val=tim_pstrobe[1] & (tim_pwdata[11:8]>8);
 assign tim_pslverr= div_en_prohibited_change | div_val_prohibited_change | div_val_prohibited_val;
 
-
-//=============================================
-//==== LOGIC DESIGN (READ TRANSFER) ==========
-//=============================================
+//LOGIC DESIGN (READ TRANSFER) 
 
 always @(*) begin
     if(!rd_en) tim_prdata=32'h0;

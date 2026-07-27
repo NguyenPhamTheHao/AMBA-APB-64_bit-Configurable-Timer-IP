@@ -11,10 +11,7 @@ module counter_control(
     output wire timer_en_fall
 );
 
-//===================================
-//=== INTERNAL SIGNAL DECLARTION ====
-//===================================
-
+//INTERNAL SIGNAL DECLARTION 
 // Internal signal for generation of count_en
 wire default_cnt_mode; // Counts in case of default mode
 wire div_val_0_mode;   // Counts in case div_val = 0
@@ -29,15 +26,10 @@ wire cycle_cnt_done;
 //Internal signal for timer_en_fall logic
 reg timer_en_pre;
 
-//===================================
-//=== LOGIC DESIGN ==================
-//===================================
+//LOGIC DESIGN
 
-
-//============================================
-//==== CYCLE DIVISION FOR COUNTING LOGIC =====
+//CYCLE DIVISION FOR COUNTING LOGIC 
 //Decode the divisor value set
-
 always @(*) begin
     case(div_val) 
         4'd0: cycle_limit=8'd0;
@@ -66,20 +58,12 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
                  end
          end
 end
-//=======================================
-//=======================================
 
-
-//=======================================
-//==== HALT LOGIC =======================
+// HALT LOGIC
 
 assign halt_ack= dbg_mode & halt_req;
-//=======================================
-//=======================================
 
-
-//=======================================
-//==== COUNT_EN GENERATION LOGIC ========
+// COUNT_EN GENERATION LOGIC 
 
 assign default_cnt_mode= timer_en &(~div_en);
 assign div_val_0_mode=timer_en & (div_en) & (div_val==0);
@@ -89,13 +73,7 @@ assign count_en_pre=default_cnt_mode | div_val_0_mode | control_cnt_mode;
 // Ouput logic of count_en
 assign count_en= count_en_pre & (~halt_ack);
 
-//=======================================
-//=======================================
-
-
-
-//======================================
-//===== TIMER_EN FALL LOGIC ============
+// TIMER_EN FALL LOGIC 
 always @(posedge sys_clk or negedge sys_rst_n) begin
     if(!sys_rst_n) timer_en_pre<=1'b0;
     else timer_en_pre<= timer_en;

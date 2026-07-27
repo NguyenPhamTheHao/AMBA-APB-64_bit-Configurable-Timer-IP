@@ -13,9 +13,7 @@ module timer_top(
     output wire tim_pready,
     output wire tim_int
     );
-//==========================================
-//===== INTERNAL SIGNALS DECLARATION =======
-//==========================================
+//INTERNAL SIGNALS DECLARATION 
 
 wire wr_en;
 wire rd_en;
@@ -31,9 +29,7 @@ wire timer_en_fall;
 wire int_en;
 wire int_st;
 
-//=====================================
-//== CONNECTION OF EACH BLOCK==========
-//=====================================
+//CONNECTION OF EACH BLOCK
 APB_slave   u_APB_slave(
     .sys_clk    (sys_clk),
     .sys_rst_n  (sys_rst_n),
